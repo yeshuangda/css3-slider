@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: darkcyan;
+}
+section{
+    width: 800px;
+    height: 500px;
+    border: 20px solid beige;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.4);
+    position: relative;
+    overflow: hidden;
+    /*overflow: hidden;*/
+}
+section>.content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: red;
+
+}
+section>.content>input{
+    display: none;
+}
+section>.content>label:before{
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #7cabc9;
+    float: left;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    z-index: -2;
+}
+section>.content>label{
+    display: inline-block;
+    width: 190px;
+    position: relative;
+    top: 450px;
+    left: 0;
+    z-index: 99;
+    text-align: center;
+    color: aliceblue;
+    font-style: italic;
+
+}
+.img{
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.img span{
+    width: 200px;
+    height: 500px;
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    top:0;
+    left: -200px;
+    transition: left 0.8s ease-in-out;
+}
+.img>div{
+    width: 200px;
+    height: 500px;
+    float: left;
+    /*background: red;*/
+    position: relative;
+    overflow: hidden;
+}
+input:checked ~ .img>div>span{
+    animation: slideOut 1s ease-in-out;
+}
+@keyframes slideOut{
+    from{
+        left:0;
+    }
+    to{left: 200px}
+}
+.img>div>.span1{
+    background: url("../img/001.jpg") no-repeat;
+
+}
+.img>div>.span2{
+    background: url("../img/002.jpg") no-repeat;
+
+}
+.img>div>.span3{
+    background: url("../img/003.jpg") no-repeat;
+
+}
+.img>div>.span4{
+    background: url("../img/004.jpg") no-repeat;
+
+}
+.img>.img1>.span1,.img>.img1>.span2,.img>.img1>.span3,.img>.img1>.span4{
+    background-position: 0 0;
+}
+.img>.img2>.span1,.img>.img2>.span2,.img>.img2>.span3,.img>.img2>.span4{
+    background-position: -200px 0;
+}
+.img>.img3>.span1,.img>.img3>.span2,.img>.img3>.span3,.img>.img3>.span4{
+    background-position: -400px 0;
+}
+.img>.img4>.span1,.img>.img4>.span2,.img>.img4>.span3,.img>.img4>.span4{
+    background-position: -600px 0;
+}
+#image_button_Id1:checked~ .img>div>.span1{
+   z-index: 5;
+    left: 0;
+    animation: none;
+}
+#image_button_Id2:checked~ .img>div>.span2{
+    z-index: 5;
+    left: 0;
+    animation: none;
+}
+#image_button_Id3:checked~ .img>div>.span3{
+    z-index: 5;
+    left: 0;
+    animation: none;
+}
+#image_button_Id4:checked~ .img>div>.span4{
+    z-index: 5;
+    left: 0;
+    animation: none;
+}
